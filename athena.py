@@ -104,21 +104,21 @@ if __name__ == '__main__':
     r = sr.Recognizer()
 
     # Start the conversation
-    with sr.Microphone(device_index=2) as source:
+    with sr.Microphone(device_index=2) as source: # Change device_index to match your microphone
         print('Calibrating...')
         r.adjust_for_ambient_noise(source, duration=3)
         while True:
             print('Listening now...')
             audio = r.listen(source, timeout=None, phrase_time_limit=None)
             print('Transcribing...')
-            user_prompt = r.recognize_whisper(audio, model='tiny.en', show_dict=True)['text']
+            user_prompt = r.recognize_whisper(audio, model='tiny.en', show_dict=True)['text'] # Change model to match your preference
             if len(user_prompt.split()) > 3:
                 conv_mem.add_message({"role": "user", "content": user_prompt})
                 print('Generating response...')
                 audio_stream = generate(
                     text=streamer.combined_text_stream(messages=conv_mem.get_messages()),
-                    voice="Bella",
-                    model="eleven_multilingual_v2",
+                    voice="Bella", # Change voice to match your preference
+                    model="eleven_multilingual_v2", # Change model to match your preference
                     stream=True
                 )
                 stream(audio_stream)
