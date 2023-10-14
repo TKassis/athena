@@ -36,3 +36,8 @@ Modify `athena.py` for your specific needs:
     ```
     python athena.py
     ```
+
+  ## ✅ To-Do
+- [ ] Add long-term memory using a vector database
+- [ ] Switch to faster_whisper as transcription seems to be slow
+- [ ] Add optional knowledge store
