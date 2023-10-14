@@ -1,0 +1,29 @@
+name: athena
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - conda-forge::jupyterlab
+  - pytorch-cuda=12.1
+  - pytorch::pytorch=2.1
+  - conda-forge::faiss
+  - conda-forge::python-dotenv
+  - numpy
+  - pandas
+  - git
+  - pip
+  - pip:
+    - openai
+    - openai-whisper
+    - ffmpeg-python
+    - pyaudio
+    - elevenlabs
+    - langchain
+    - chromadb
+    - unstructured
+    - SpeechRecognition
+    - soundfile
+    - transformers
